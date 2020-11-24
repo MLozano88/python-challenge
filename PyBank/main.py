@@ -13,3 +13,11 @@ with open(csvpath) as csvfile:
     print('---------------------------')
     months= len(list(csvreader))
     print('Total Months: '+ str(months))
+
+with open(csvpath, 'r') as f:
+  next(f)
+  total = 0
+  for row in csv.reader(f):
+    total += int(row[1])
+
+  print('Total:{}'.format('$'+ str(total)))
