@@ -63,3 +63,14 @@ with open(csvpath, newline="") as csvfile:
     print(f"Greatest Increase in Profits:  {most_profit} (${greatest_increase})")
     print(f"Greatest Decrease in Profits:  {most_loss} (${greatest_decrease})")
     print('------------------------------------')
+
+    budget_write_file = os.path.join("Resources", "budget_data.txt")
+    with open(budget_write_file, "w") as outfile:
+
+      outfile.write("Financial Analysis\n")
+      outfile.write("----------------------------\n")
+      outfile.write(f"Total Months:  {row_count}\n")
+      outfile.write(f"Total:  ${net_total}\n")
+      outfile.write(f"Average Change:  ${total_average}\n")
+      outfile.write(f"Greatest Increase in Profits:  {most_profit} (${greatest_increase})\n")
+      outfile.write(f"Greatest Decrease in Losses:  {most_loss} (${greatest_decrease})\n")
