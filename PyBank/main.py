@@ -64,7 +64,7 @@ with open(csvpath, newline="") as csvfile:
     print(f"Greatest Decrease in Profits:  {most_loss} (${greatest_decrease})")
     print('------------------------------------')
 
-    budget_write_file = os.path.join("Resources", "budget_data.txt")
+    budget_write_file = os.path.join("Analysis", "budget_data.txt")
     with open(budget_write_file, "w") as outfile:
 
       outfile.write("Financial Analysis\n")
