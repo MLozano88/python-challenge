@@ -24,7 +24,14 @@ These python scripts use cvs modules to read and write information.
     
   The outcome will be as seen below:
   
-  
+        Financial Analysis
+        ----------------------------
+        Total Months:  86
+        Total:  $38382578
+        Average Change:  $-2315.12
+        Greatest Increase in Profits:  Feb-12 ($1926159)
+        Greatest Decrease in Losses:  Sep-13 ($-2196167)
+
 
 
 # PyPoll
@@ -40,7 +47,17 @@ These python scripts use cvs modules to read and write information.
     
   The outcome will be as seen below:
   
-  
+     Election Results
+     ----------------------------
+     Total Votes: 3521001
+     ------------------------------
+     Khan: 63% (2218231)
+     Correy: 20% (704200)
+     Li: 14% (492940)
+     O'Tooley: 3% (105630)
+     ------------------------------
+     Winner: Khan
+     ------------------------------
   
  
 # Technologies 
