@@ -66,3 +66,4 @@ with open(csvpath, newline="") as csvfile:
       outfile.write(f"Li: {l_percentage}% ({li_votes})\n")
       outfile.write(f"O'Tooley: {t_percentage}% ({tooley_votes})\n")
       outfile.write(f"------------------------------\n")
+      outfile.write(f"Winner: {Winner}\n")
