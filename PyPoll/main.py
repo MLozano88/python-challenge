@@ -42,3 +42,27 @@ with open(csvpath, newline="") as csvfile:
     print(f"Li: {l_percentage}% ({li_votes})")
     print(f"O'Tooley: {t_percentage}% ({tooley_votes})")
     print('------------------------------')
+
+     #Compare Votes and pick winner with the most votes
+    if khan_votes>correy_votes>li_votes>tooley_votes:
+       Winner = "Khan"
+    elif correy_votes >khan_votes>li_votes>tooley_votes:
+       Winner = "Correy"
+    elif li_votes>khan_votes>correy_votes>tooley_votes:
+       Winner = "Li"
+    elif tooley_votes>khan_votes>correy_votes>li_votes:
+       Winner = "O'Tooley"
+    print(f"Winner: {Winner}")
+
+    poll_results_file = os.path.join("Analysis", "poll_data.txt")
+    with open(poll_results_file, "w") as outfile:
+
+      outfile.write("Election Results\n")
+      outfile.write("----------------------------\n")
+      outfile.write(f"Total Votes: {vote_count}\n")
+      outfile.write(f"------------------------------\n")
+      outfile.write(f"Khan: {k_percentage}% ({khan_votes})\n")
+      outfile.write(f"Correy: {c_percentage}% ({correy_votes})\n")
+      outfile.write(f"Li: {l_percentage}% ({li_votes})\n")
+      outfile.write(f"O'Tooley: {t_percentage}% ({tooley_votes})\n")
+      outfile.write(f"------------------------------\n")
