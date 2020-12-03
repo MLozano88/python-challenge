@@ -1,11 +1,12 @@
 import os
 import csv
 
-#Defined variables
+#Lists will hold the changes in profit/losses and
+# date the changes were recorded. 
 profit_loss = []
 timeline = []
 
-
+#Defined variables
 net_total = 0
 prior_profit_loss = 0
 current_profit_loss = 0
@@ -19,17 +20,19 @@ csvpath = os.path.join('Resources', 'budget_data.csv')
 with open(csvpath, newline="") as csvfile:
     # CSV reader specifies delimiter and variable that holds contents
     csvreader = csv.reader(csvfile, delimiter=',')
-    # Read the header row first (skip this step if there is now header)
+    # Read and skip the header row
     csv_header = next(csvfile)
 
     for row in csvreader:
 
-      #Count through the number of rows
+      #Count through the number of rows and store in variable
       row_count += 1
-
+      #variables calculate the total amount of profit/loses 
+      #over the entire period
       current_profit_loss = int(row[1])
       net_total += current_profit_loss
-
+      #Conditional will store values to help calculate the average change,
+      #greatest increase and decrease over time.
       if (row_count == 1):
         prior_profit_loss = current_profit_loss
         continue
@@ -64,6 +67,7 @@ with open(csvpath, newline="") as csvfile:
     print(f"Greatest Decrease in Profits:  {most_loss} (${greatest_decrease})")
     print('------------------------------------')
 
+    #Export results to a text file in the 'Analysis' folder
     budget_write_file = os.path.join("Analysis", "budget_data.txt")
     with open(budget_write_file, "w") as outfile:
 
